@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Synkra Nova</title>
+    <title>Synkra Nova, LLC</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <style>
@@ -15,9 +15,8 @@
             font-family: 'Source Sans Pro', Arial, sans-serif;
             background: #000;
             color: #fff;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
-            min-height: 100vh;
         }
 
         #bg {
@@ -56,15 +55,18 @@
         #wrapper {
             position: relative;
             z-index: 3;
+        }
+
+        #hero {
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             padding: 2rem;
+            text-align: center;
         }
 
         #main {
-            text-align: center;
             animation: fadeIn 1s ease-in;
         }
 
@@ -122,11 +124,120 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        footer {
+        /* Content Sections */
+        #content {
+            position: relative;
+            z-index: 3;
+            background: #000;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            padding: 3rem 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: left;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
             font-size: 0.9rem;
-            opacity: 0.75;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+            opacity: 0.6;
+            background: #000;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         footer a {
@@ -157,6 +268,18 @@
                 width: 2.5rem;
                 height: 2.5rem;
             }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -167,22 +290,64 @@
         </video>
     </div>
     <div id="overlay"></div>
+    
     <div id="wrapper">
-        <div id="main">
-            <header id="header">
-                <h1>Synkra Nova, LLC</h1>
-                <p>Come along for the adventure</p>
-                <nav>
-                    <ul>
-                        <li><a href="mailto:synkranova@gmail.com" aria-label="Email">✉</a></li>
-                    </ul>
-                </nav>
-            </header>
+        <section id="hero">
+            <div id="main">
+                <header id="header">
+                    <h1>Synkra Nova, LLC</h1>
+                    <p>Come along for the adventure</p>
+                    <nav>
+                        <ul>
+                            <li><a href="mailto:synkranova@gmail.com" aria-label="Email">✉</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+        </section>
 
-            <footer id="footer">
-                <span class="copyright">&copy; 2025 Synkra Nova, LLC. Design inspired by <a href="http://html5up.net">HTML5 UP</a>.</span>
-            </footer>
+        <div id="content">
+            <section class="section">
+                <h2>What We Do</h2>
+                <p>Synkra Nova, LLC specializes in innovative solutions that push boundaries and create meaningful impact. We blend creativity with cutting-edge technology to deliver exceptional results.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Creative Development</h3>
+                        <p>Transforming ideas into reality through innovative design and strategic thinking that captivates audiences.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Digital Solutions</h3>
+                        <p>Building modern, responsive platforms that deliver seamless user experiences across all devices.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Strategic Consulting</h3>
+                        <p>Providing expert guidance to help businesses navigate complex challenges and achieve their goals.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>At Synkra Nova, LLC, we believe in the power of innovation to transform businesses and create lasting value. Our team combines deep expertise with creative vision to deliver solutions that exceed expectations.</p>
+                        <p>We're not just service providers – we're partners in your journey, committed to your success every step of the way. Our approach is collaborative, transparent, and focused on delivering measurable results.</p>
+                        <a href="mailto:synkranova@gmail.com" class="cta-button">Get In Touch</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Ready to Begin?</h2>
+                <p>Let's start a conversation about how we can help bring your vision to life. Reach out today and discover what's possible when creativity meets innovation.</p>
+                <a href="mailto:synkranova@gmail.com" class="cta-button">Contact Us</a>
+            </section>
         </div>
+
+        <footer id="footer">
+            <span class="copyright">&copy; 2025 Synkra Nova, LLC. Design inspired by <a href="http://html5up.net">HTML5 UP</a>.</span>
+        </footer>
     </div>
 </body>
 </html>
